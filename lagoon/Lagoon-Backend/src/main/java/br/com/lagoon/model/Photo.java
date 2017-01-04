@@ -28,5 +28,4 @@ public class Photo {
 //	@ManyToOne
 //	@JsonBackReference
 //	private User user;
-	//Added new line to test commit
 }
