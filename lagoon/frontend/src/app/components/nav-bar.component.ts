@@ -12,7 +12,7 @@ export class NavBar{
 		this.myLocalStorage = localStorage;
 	}
 
-	onclick() {
+	onClick() {
 		if(this.loginService.checkLogin()){
 			this.loginService.logout();
 		}
