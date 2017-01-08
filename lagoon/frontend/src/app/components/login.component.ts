@@ -25,10 +25,10 @@ export class Login {
 						this.model.username = '';
 						this.model.password = '';
 					},
-					error => console.log(error);
+					error => console.log(error)
 				);
 			},
-			error => console.log(error);
+			error => console.log(error)
 		);
 	}
 }
