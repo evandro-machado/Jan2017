@@ -10,10 +10,12 @@ import { PhotoList } from './components/photo-list.component';
 import { SidePanel } from './components/side-panel.component';
 import { NavBar } from './components/nav-bar.component';
 import { Register } from './components/register.component';
+import { Login } from './components/login.component';
 
 
 import { PhotoService } from './services/photo.service';
 import { RegisterService } from './services/register.service';
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { RegisterService } from './services/register.service';
     PhotoList,
     SidePanel,
     NavBar,
-    Register
+    Register,
+    Login
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import { RegisterService } from './services/register.service';
   ],
   providers: [
     PhotoService,
-    RegisterService  
+    RegisterService,
+    LoginService  
   ],
   bootstrap: [AppComponent]
 })
