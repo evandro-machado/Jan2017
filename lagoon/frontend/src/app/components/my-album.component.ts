@@ -28,8 +28,8 @@ export class MyAlbum {
 		);
 	}
 
-	// onSelect(photo: Photo) {
-	// 	this.selectedPhoto = photo;
-	// 	this.router.nagivate(['image-detail', this.selectedPhoto.photoId]);
-	// }
+	onSelect(photo: Photo) {
+		this.selectedPhoto = photo;
+		this.router.nagivate(['image-detail', this.selectedPhoto.photoId]);
+	}
 }
