@@ -16,7 +16,7 @@ export class PhotoService {
 	}
 
 	getPhotodById(){
-		
+		return false;
 	}
 }
 
