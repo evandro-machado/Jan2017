@@ -14,6 +14,10 @@ export class PhotoService {
 
 	getPhotosByUser(user) {
 	}
+
+	getPhotodById(){
+		return true;
+	}
 }
 
 
