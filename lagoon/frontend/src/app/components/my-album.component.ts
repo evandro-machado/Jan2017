@@ -29,7 +29,7 @@ export class MyAlbum {
 	}
 
 	onSelect(photo: Photo) {
-		this.selectedPhoto = photo;
-		this.router.nagivate(['image-detail', this.selectedPhoto.photoId]);
+		// this.selectedPhoto = photo;
+		// this.router.nagivate(['image-detail', this.selectedPhoto.photoId]);
 	}
 }
