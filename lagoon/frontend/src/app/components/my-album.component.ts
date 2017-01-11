@@ -19,17 +19,17 @@ export class MyAlbum {
 			user => {
 				this.user = JSON.parse(JSON.parse(JSON.stringify(user))._body);
 				console.log(this.user);
-				// this.photoService.getPhotosByUser(this.user).subscribe(
-				// 	photos => {console.log(this.photos = JSON.parse(JSON.parse(JSON.stringify(user))._body).photoList)},
-				// 	error => console.log(error)
-				// );
+				this.photoService.getPhotosByUser(this.user).subscribe(
+					photos => {console.log(this.photos = JSON.parse(JSON.parse(JSON.stringify(user))._body).photoList)},
+					error => console.log(error)
+				);
 			},
 			error => console.log(error)
 		);
 	}
 
 	onSelect(photo: Photo) {
-		// this.selectedPhoto = photo;
+		this.selectedPhoto = photo;
 		// this.router.nagivate(['image-detail', this.selectedPhoto.photoId]);
 	}
 }

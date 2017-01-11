@@ -5,19 +5,31 @@ import {User} from '../models/user';
 
 @Injectable()
 export class PhotoService {
-	constructor (private http:Http){}
+	constructor (private http:Http){ }
 
-	getPhotos(){
+	getPhotos() {
 		let url = "http://localhost:8080/photo/allPhotos";
 		return this.http.get(url);
 	}
 
-	getPhotosByUser(user) {
+	getPhotosById(photoId: number) {
+		let tokenUrl1 = "http://localhost:8080/rest/photo/photoId";
+		let headers1 = new Headers({'Content-Type': 'application/json', 'Authorization': 'Bearer ' + localStorage.getItem("token")});
+		return this.http.post(tokenUrl1, JSON.stringify(photoId), {headers: headers1});
 	}
 
-	getPhotodById(){
-		return true;
+	getPhotosByUser (user: User) {
+		let tokenUrl1 = "http://localhost:8080/rest/photo/photoId";
+		let headers1 = new Headers({'Content-Type': 'application/json', 'Authorization': 'Bearer ' + localStorage.getItem("token")});
+		return this.http.post(tokenUrl1, JSON.stringify(user), {headers: headers1});	
 	}
+
+	updatePhoto (photo: Photo) {
+		let tokenUrl1 = "http://localhost:8080/rest/photo/photoId";
+		let headers1 = new Headers({'Content-Type': 'application/json', 'Authorization': 'Bearer ' + localStorage.getItem("token")});
+		return this.http.post(tokenUrl1, JSON.stringify(photo), {headers: headers1});
+	}
+
 }
 
 

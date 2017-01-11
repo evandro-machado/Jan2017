@@ -5,23 +5,23 @@
 			<div class="two fields">
 				<div class="field">
 					<label>* Photo Name</label>
-					<input type="text" name="photoName" placeholder="Photo Name" [(ngModel)]="newPhoto.photoName" ngControl="photoName" required></input>
+					<input type="text" name="photoName" placeholder="Photo Name" [(ngModel)]="newPhoto.photoName" ngControl="photoName" required>
 				</div>
 				<div class="field">
 					<label>* Photo Title</label>
-					<input type="text" name="title" placeholder="Photo Title" [(ngModel)]="newPhoto.title" ngControl="title" required></input>
+					<input type="text" name="title" placeholder="Photo Title" [(ngModel)]="newPhoto.title" ngControl="title" required>
 				</div>
 			</div>
 		</div>
 		<div class="field">
 			<label>Description</label>
 			<div class="field">
-				<input type="text" name="Description" placeholder="Description" [(ngModel)]="newPhoto.description" ngControl="description"></input>
+				<input type="text" name="Description" placeholder="Description" [(ngModel)]="newPhoto.description" ngControl="description">
 			</div>
 		</div>
 		<div class="field">
 			<label>Upload Photo</label>
-			<input type="file" (change)="uploadPhotoService.fileChangeEvent($event)"></input>
+			<input type="file" (change)="uploadPhotoService.fileChangeEvent($event)">
 			<button type="button" (click)="uploadPhotoService.upload()" class="ui mini button">Upload</button>
 		</div>
 		<hr>

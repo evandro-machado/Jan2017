@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Photo } from '../models/photo';
 import { UploadPhotoService } from '../services/upload-photo.service';
 import { AddPhotoService } from '../services/add-photo.service';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user';
+import { Photo } from '../models/photo';
 
 @Component({
 	selector: 'add-photo',
@@ -27,10 +27,10 @@ export class AddPhoto {
 						this.photoAdded = true;
 						this.newPhoto = new Photo();
 					},
-					error => console.log(error);
+					error => console.log(error)
 				);
 			},
-			error => console.log(error);
-		)
+			error => console.log(error)
+		);
 	}
 }
