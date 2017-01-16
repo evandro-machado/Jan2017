@@ -13,6 +13,8 @@ import { Register } from './components/register.component';
 import { Login } from './components/login.component';
 import { MyAlbum } from './components/my-album.component';
 import { AddPhoto } from './components/add-photo.component';
+import { ImageComments } from './components/image-comments.component';
+import { ImageDetail } from './components/image-detail.component';
 
 
 import { PhotoService } from './services/photo.service';
@@ -21,6 +23,7 @@ import { LoginService } from './services/login.service';
 import { UserService } from './services/user.service';
 import { AddPhotoService } from './services/add-photo.service';
 import { UploadPhotoService } from './services/upload-photo.service';
+import { CommentService } from './services/comment.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { UploadPhotoService } from './services/upload-photo.service';
     Register,
     Login,
     MyAlbum,
-    AddPhoto
+    AddPhoto,
+    ImageComments,
+    ImageDetail
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,8 @@ import { UploadPhotoService } from './services/upload-photo.service';
     LoginService,
     UserService,
     AddPhotoService,
-    UploadPhotoService
+    UploadPhotoService,
+    CommentService
   ],
   bootstrap: [AppComponent]
 })
