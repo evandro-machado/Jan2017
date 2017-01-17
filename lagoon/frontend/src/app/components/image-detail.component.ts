@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { NavBar } from './nav-bar.component';
 import { Photo } from '../models/photo';
 import { PhotoService } from '../services/photo.service';
-import { ImageComments } from '../image-comments.component';
+import { ImageComments } from '../components/image-comments.component';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user';
 import { ActivatedRoute, Params } from '@angular/router';
@@ -28,7 +28,7 @@ export class ImageDetail {
 				this.userService.getUserByName(localStorage.getItem("currentUserName")).subscribe(
 					user => {
 						this.user = JSON.parse(JSON.parse(JSON.stringify(user))._body);
-						if (this.user.likedPhotoList.filter(photo => photo.id == this.photo.photoId)[0]){
+						if (this.user.likedPhotoList.filter(photo => photo.photoId == this.photo.photoId)[0]){
 							this.like = "Unlike";
 						} else {
 							this.like = "Like";

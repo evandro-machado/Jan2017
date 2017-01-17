@@ -30,6 +30,6 @@ export class MyAlbum {
 
 	onSelect(photo: Photo) {
 		this.selectedPhoto = photo;
-		// this.router.nagivate(['image-detail', this.selectedPhoto.photoId]);
+		this.router.navigate(['image-detail', this.selectedPhoto.photoId]);
 	}
 }
