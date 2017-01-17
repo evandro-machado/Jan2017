@@ -3,11 +3,13 @@ package br.com.lagoon.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import br.com.lagoon.dao.CommentDao;
 import br.com.lagoon.model.Comment;
 import br.com.lagoon.service.CommentService;
 
+@Service
 public class CommentServiceImpl implements CommentService {
 
 	@Autowired
