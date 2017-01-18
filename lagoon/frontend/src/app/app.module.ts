@@ -15,6 +15,7 @@ import { MyAlbum } from './components/my-album.component';
 import { AddPhoto } from './components/add-photo.component';
 import { ImageComments } from './components/image-comments.component';
 import { ImageDetail } from './components/image-detail.component';
+import { PhotoRow } from './components/photo-row.component';
 
 
 import { PhotoService } from './services/photo.service';
@@ -37,7 +38,8 @@ import { CommentService } from './services/comment.service';
     MyAlbum,
     AddPhoto,
     ImageComments,
-    ImageDetail
+    ImageDetail,
+    PhotoRow
   ],
   imports: [
     BrowserModule,
