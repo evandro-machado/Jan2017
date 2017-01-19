@@ -5,11 +5,11 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class RegisterService {
-	constructor (private http: Http){}
+	constructor (private _http: Http){}
 
 	sendUser ( user:User ) {
 		let url = "http://localhost:8080/user/register";
 		let headers1 = new Headers({'Content-Type': 'application/json'});
-		return this.http.post(url, JSON.stringify(user), {headers: headers1})
+		return this._http.post(url, JSON.stringify(user), {headers: headers1})
 	}
 }  

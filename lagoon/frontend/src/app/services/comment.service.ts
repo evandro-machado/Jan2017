@@ -4,13 +4,13 @@ import { Comment } from '../models/comment';
 
 @Injectable()
 export class CommentService {
-	constructor (private http: Http) {
+	constructor (private _http: Http) {
 	}
 
 	addComment(comment: Comment) {
 		let tokenUrl1 = "http://localhost:8080/rest/comment/add";
 		let headers1 = new Headers({'Content-Type': 'application/json', 'Authorization': 'Bearer ' + localStorage.getItem("token")});
 		console.log(JSON.stringify(comment));
-		return this.http.post(tokenUrl1, JSON.stringify(comment), {headers: headers1});
+		return this._http.post(tokenUrl1, JSON.stringify(comment), {headers: headers1});
 	}
 }

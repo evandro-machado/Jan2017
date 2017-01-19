@@ -7,7 +7,7 @@ import { Http, Headers } from '@angular/http';
 export class UserService {
 	user: User[];
 
-	constructor (private http: Http) {}
+	constructor (private _http: Http) {}
 
 	getUsers() {
 
@@ -20,12 +20,12 @@ export class UserService {
 	getUserByName(username: string) {
 		let tokenUrl = "http://localhost:8080/rest/user/userName";
 		let headers = new Headers({'Content-Type': 'application/json', 'Authorization': 'Bearer ' + localStorage.getItem("token")});
-		return this.http.post(tokenUrl, username, {headers: headers});
+		return this._http.post(tokenUrl, username, {headers: headers});
 	}
 
 	updateUser(user: User) {
 		let tokenUrl1 = "http://localhost:8080/rest/user/userName";
 		let headers1 = new Headers({'Content-Type': 'application/json', 'Authorization': 'Bearer ' + localStorage.getItem("token")});
-		return this.http.post(tokenUrl1, JSON.stringify(user), {headers: headers1});
+		return this._http.post(tokenUrl1, JSON.stringify(user), {headers: headers1});
 	}
 }
