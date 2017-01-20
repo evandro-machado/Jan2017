@@ -8,13 +8,13 @@ import { LoginService} from '../services/login.service';
 export class NavBar{
 	myLocalStorage;
 
-	constructor(private loginService : LoginService) {
+	constructor(private _loginService : LoginService) {
 		this.myLocalStorage = localStorage;
 	}
 
 	onClick() {
-		if(this.loginService.checkLogin()){
-			this.loginService.logout();
+		if(this._loginService.checkLogin()){
+			this._loginService.logout();
 		}
 	}
 }

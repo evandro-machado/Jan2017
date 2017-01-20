@@ -14,15 +14,15 @@ export class AddPhoto {
 	photoAdded: boolean = false;
 	user: User;
 
-	constructor (private uploadPhotoService: UploadPhotoService, private addPhotoService: AddPhotoService, private userService: UserService) {}
+	constructor (private _uploadPhotoService: UploadPhotoService, private _addPhotoService: AddPhotoService, private _userService: UserService) {}
 
 	onSubmit() {
-		this.userService.getUserByName(localStorage.getItem("currentUserName")).subscribe(
+		this._userService.getUserByName(localStorage.getItem("currentUserName")).subscribe(
 			user => {
 				this.user = JSON.parse(JSON.parse(JSON.stringify(user))._body);
 				console.log(this.user);
 				this.newPhoto.user = this.user;
-				this.addPhotoService.sendPhoto(this.newPhoto).subscribe(
+				this._addPhotoService.sendPhoto(this.newPhoto).subscribe(
 					data => {
 						this.photoAdded = true;
 						this.newPhoto = new Photo();

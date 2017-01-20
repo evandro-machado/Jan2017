@@ -10,15 +10,15 @@ export class Login {
 	private model = { 'username' : '', 'password': ''};
 	private currentUserName;
 
-	constructor (private loginService : LoginService) {
+	constructor (private _loginService : LoginService) {
 		this.currentUserName = localStorage.getItem("currentUserName");
 	}
 
 	onSubmit() {
-		this.loginService.sendCredential(this.model).subscribe (
+		this._loginService.sendCredential(this.model).subscribe (
 			data => {
 				localStorage.setItem("token", JSON.parse(JSON.stringify(data))._body);
-				this.loginService.sendToken(localStorage.getItem("token")).subscribe(
+				this._loginService.sendToken(localStorage.getItem("token")).subscribe(
 					data => {
 						this.currentUserName = this.model.username;
 						localStorage.setItem("currentUserName", this.model.username);

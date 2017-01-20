@@ -11,8 +11,8 @@ export class PhotoRow {
 	photoListSorted: Photo[];
 	photoListRanked: Photo[];
 
-	constructor(private photoService: PhotoService) {
-		this.photoService.getPhotos().subscribe(
+	constructor(private _photoService: PhotoService) {
+		this._photoService.getPhotos().subscribe(
 			data => {
 				this.photoList = JSON.parse(JSON.parse(JSON.stringify(data))._body);
 				this.photoListSorted = this.photoList.sort((a, b) => b.likes-a.likes);

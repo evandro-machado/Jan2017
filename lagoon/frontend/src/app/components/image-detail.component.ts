@@ -17,15 +17,15 @@ export class ImageDetail {
 	user: User;
 	photoId: number;
 
-	constructor(private photoService: PhotoService, private userService: UserService, private route: ActivatedRoute) {
-		this.route.params.forEach((params: Params) => {
+	constructor(private _photoService: PhotoService, private _userService: UserService, private _route: ActivatedRoute) {
+		this._route.params.forEach((params: Params) => {
 			this.photoId = Number.parseInt(params['id']);
 		});
 
-		this.photoService.getPhotoById(this.photoId).subscribe(
+		this._photoService.getPhotoById(this.photoId).subscribe(
 			photo => {
 				this.photo = JSON.parse(JSON.parse(JSON.stringify(photo))._body);
-				this.userService.getUserByName(localStorage.getItem("currentUserName")).subscribe(
+				this._userService.getUserByName(localStorage.getItem("currentUserName")).subscribe(
 					user => {
 						this.user = JSON.parse(JSON.parse(JSON.stringify(user))._body);
 						if (this.user.likedPhotoList.filter(photo => photo.photoId == this.photo.photoId)[0]){
@@ -54,8 +54,8 @@ export class ImageDetail {
 			this.like = "Unlike";
 			this.user.likedPhotoList.push(this.photo);
 			this.photo.likes += 1;
-			this.userService.updateUser(this.user).subscribe();
-			this.photoService.updatePhoto(this.photo).subscribe();
+			this._userService.updateUser(this.user).subscribe();
+			this._photoService.updatePhoto(this.photo).subscribe();
 		} else {
 			this.like = "Like";
 			// var index = this.user.likedPhotoList.indexOf(this.photo, 0);
@@ -69,8 +69,8 @@ export class ImageDetail {
 			// 	this.user.likedPhotoList.splice(index, 1);
 			// }
 			this.photo.likes -= 1;
-			this.userService.updateUser(this.user).subscribe();
-			this.photoService.updatePhoto(this.photo).subscribe();
+			this._userService.updateUser(this.user).subscribe();
+			this._photoService.updatePhoto(this.photo).subscribe();
 		}
 	}
 }

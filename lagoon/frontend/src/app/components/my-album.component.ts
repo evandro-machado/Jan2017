@@ -14,12 +14,12 @@ export class MyAlbum {
 	private user;
 	private selectedPhoto: Photo;
 
-	constructor (private photoService: PhotoService, private router: Router, private userService: UserService) {
-		this.userService.getUserByName(localStorage.getItem("currentUserName")).subscribe(
+	constructor (private _photoService: PhotoService, private _router: Router, private _userService: UserService) {
+		this._userService.getUserByName(localStorage.getItem("currentUserName")).subscribe(
 			user => {
 				this.user = JSON.parse(JSON.parse(JSON.stringify(user))._body);
 				console.log(this.user);
-				this.photoService.getPhotosByUser(this.user).subscribe(
+				this._photoService.getPhotosByUser(this.user).subscribe(
 					photos => {console.log(this.photos = JSON.parse(JSON.parse(JSON.stringify(user))._body).photoList)},
 					error => console.log(error)
 				);
@@ -30,6 +30,6 @@ export class MyAlbum {
 
 	onSelect(photo: Photo) {
 		this.selectedPhoto = photo;
-		this.router.navigate(['image-detail', this.selectedPhoto.photoId]);
+		this._router.navigate(['image-detail', this.selectedPhoto.photoId]);
 	}
 }
