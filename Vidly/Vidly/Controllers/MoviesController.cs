@@ -47,7 +47,7 @@ namespace Vidly.Controllers
                 Genres = genres
             };
 
-            return View("MoviesForm", viewModel);
+            return View("MovieForm", viewModel);
             
         }
 
@@ -56,6 +56,7 @@ namespace Vidly.Controllers
         {
             if (movie.Id == 0)
             {
+                movie.DateAdded = DateTime.Now;
                 _context.Movies.Add(movie);
             }
             else
@@ -87,7 +88,7 @@ namespace Vidly.Controllers
                 Genres = _context.Genres.ToList()
             };
 
-            return View("MoviesForm", viewModel);
+            return View("MovieForm", viewModel);
 
         }
 
