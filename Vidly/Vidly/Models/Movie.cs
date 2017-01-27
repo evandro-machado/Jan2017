@@ -19,9 +19,11 @@ namespace Vidly.Models
         public DateTime DateAdded { get; set; }
 
         [Display(Name = "Release Date")]
+        [Required]
         public DateTime ReleaseDate { get; set; }
 
         [Display(Name = "Number in Stock")]
+        [Required]
         public byte NumberInStock { get; set; }
     }
 
