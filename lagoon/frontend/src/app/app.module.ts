@@ -10,10 +10,21 @@ import { PhotoList } from './components/photo-list.component';
 import { SidePanel } from './components/side-panel.component';
 import { NavBar } from './components/nav-bar.component';
 import { Register } from './components/register.component';
+import { Login } from './components/login.component';
+import { MyAlbum } from './components/my-album.component';
+import { AddPhoto } from './components/add-photo.component';
+import { ImageComments } from './components/image-comments.component';
+import { ImageDetail } from './components/image-detail.component';
+import { PhotoRow } from './components/photo-row.component';
 
 
 import { PhotoService } from './services/photo.service';
 import { RegisterService } from './services/register.service';
+import { LoginService } from './services/login.service';
+import { UserService } from './services/user.service';
+import { AddPhotoService } from './services/add-photo.service';
+import { UploadPhotoService } from './services/upload-photo.service';
+import { CommentService } from './services/comment.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +33,13 @@ import { RegisterService } from './services/register.service';
     PhotoList,
     SidePanel,
     NavBar,
-    Register
+    Register,
+    Login,
+    MyAlbum,
+    AddPhoto,
+    ImageComments,
+    ImageDetail,
+    PhotoRow
   ],
   imports: [
     BrowserModule,
@@ -32,7 +49,12 @@ import { RegisterService } from './services/register.service';
   ],
   providers: [
     PhotoService,
-    RegisterService  
+    RegisterService,
+    LoginService,
+    UserService,
+    AddPhotoService,
+    UploadPhotoService,
+    CommentService
   ],
   bootstrap: [AppComponent]
 })
